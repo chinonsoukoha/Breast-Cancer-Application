@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&display=swap');
+body{
+    overflow-x: hidden !important;
+}
+.navbar{
+    background-color: #FAEBF1 !important;
+    padding: 0;
+}
+#nav-btn{
+    background-color: #D46A92;
+    color: #fff;
+}
+#nav-btn:hover{   
+    border: 1px solid #D46A92 !important;
+    background: transparent;
+    color: #D46A92;
+    font-weight: bold;
+    transition: all 0.2s ease-out;
+}
+.navbar-nav{
+    font-family: 'Lora', serif;
+}
+.nav-link{
+    color: #D46A92 !important;
+}
+.nav-link:hover{
+    color: #D46A92 !important;
+    font-weight: bold;
+}
+.banner{
+    background: url("../images/banner.svg");
+    height: 90vh;
+}
+.banner-text{
+    margin-top: 10%;
+}
+ .text-responsive{
+    font-size: 4vw;
+}
+.banner-header{
+    font-family: 'Playfair Display', serif;
+    font-weight: bold;
+    color: #D46A92;
+}
+#banner-anim::before{
+    content: '';
+    animation: animate infinite 5s;
+}
+@keyframes animate{
+    0%{
+        content: 'Detection';
+    }
+    50%{
+        content: 'Diagnosis';
+    }
+    100%{
+        content: 'Prediction';
+    }
+}
+
+.banner-paragraph{
+    font-family: 'Lora', serif;
+    color: #A8597F;
+    padding-top: 1vw;
+    font-size: 1.5vw;
+}
+
+.banner-btn{
+    font-family: 'lora', serif;
+    background: linear-gradient(180deg, #D46A92 0%, #F39DB6 100%);
+    color: #fff !important; 
+    width: 80%; 
+    padding: 1.2vh; 
+    border: none; 
+    border-radius: 5px; 
+    filter: drop-shadow(0px 2px 2px rgba(212, 106, 146, 1.0));
+    outline: none;
+}
+.banner-btn:hover{
+    border: 1px solid #D46A92;
+    color: #D46A92 !important;
+    background: #FEFAFA;
+}
+.banner-btn:focus{
+    outline: none;
+    box-shadow: none;
+}
+.onboarding-row{
+    margin-top: 7%;
+    margin-bottom: 7%;
+}
+
+#services{
+    background-image: url(../images/image\ display.svg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding-top: 15%;
+    padding-bottom: 15% ;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.service-content{
+    height: 100%;
+}
+.footer{
+    background: #ECB2C7;
+}
+.footer-row{
+    padding: 5vh;;
+}
+#footer-img{
+    width: 18vh;
+}
+.footer-text{
+    color: #fff;
+}
+.segments{
+    margin-bottom: 30px;
+}
+.segment-two h3::before{
+    content: '|';
+    color: #D46A92;
+    padding-right: 10px;
+}
+.segment-two h3{
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    color: #D46A92;
+    font-weight: bold;
+}
+.segment-two ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.segment-two ul li{
+    border-bottom: 1px solid #fff;
+    line-height: 40px;
+}
+.segment-two ul li a{
+    color: #fff!important;
+}
+.segment-two ul li a:hover{
+    text-decoration: none;
+    color: #D46A92!important;
+}
+.segment-three h3{
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    color: #D46A92;
+    font-weight: bold;
+
+}
+.segment-three h3::before{
+    content: '|';
+    color: #D46A92;
+    padding-right: 10px;
+}
+.segment-three a{
+    background: #D46A92;
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    border-radius: 50%;
+    text-align: center;
+    padding-top: 7px;
+}
+.segment-three a:hover{
+    border: 1px solid #D46A92;
+    background: transparent;
+    color: #D46A92;
+}
+.segment-four h3{
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    color: #D46A92;
+    font-weight: bold;
+}
+.segment-four h3::before{
+    content: '|';
+    color: #D46A92;
+    padding-right: 10px;
+}
+.segment-four form #subscribe{
+    background: #D46A92;
+    border: none;
+    color:#fff;   
+    padding: 2px;
+    font-weight: bold;
+}
+.segment-four form #subscribe:hover{
+    background: transparent;
+    border: 1px solid white;
+}
+.segment-four form #form{
+    padding: 10px;
+}
+
+
+
+
+
+
+@media only screen and (max-device-width: 480px) {
+
+.text-responsive{
+    font-size: 2.5vh
+}    
+.banner-btn{
+        width: 100%;
+        padding: 1vh;
+        font-size: 2vw;
+}
+.banner-text{
+    margin-top: 7%;
+}
+ .text-responsive{
+    font-size: 3vw;
+}
+.banner{
+    background: url("../images/banner\ 2.svg");
+    height: 32vh;
+}
+.onboarding-row{
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+}
+}
+
+@media only screen and (max-device-width: 330px) {
+.banner{
+    background: url("../images/banner\ 3.svg")!important;
+    height: 30vh !important;
+}
+}
+
+@media only screen and (max-device-width: 370px) {
+.banner{
+    background: url("../images/banner\ 4.svg");
+    height: 33vh;
+}
+}
+
+
+

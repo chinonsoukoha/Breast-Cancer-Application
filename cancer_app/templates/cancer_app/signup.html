@@ -1,0 +1,136 @@
+{% load static %}
+<!--Load static files-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="{% static 'cancer_app/css/signup.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="{% static 'cancer_app/images/cancer_pic.png' %}" style="width: fit-content;">
+</head>
+
+<body>
+    <!--Image Display-->
+    <div class="row display-pic">
+        <div class="col-xl-5 img-display text-left d-xl-block d-none">
+            <!--Bootstrap to make the image collapse when in smaller devices-->
+            <img src="{% static 'cancer_app/images/signup.jpg' %}" class="img-fluid" id="display-pic">
+        </div>
+        <!--Login form-->
+        <div class="col-xl-7 login">
+            <nav class="navbar navbar-expand-lg">
+                <a class="navbar-brand ml-auto" href="{% url 'landingpage' %}"><img
+                        src="{% static 'cancer_app/images/Logo.svg' %}" width="60%"></a>
+            </nav>
+            <form method="POST" action="">
+                {% csrf_token %}
+                <div class="container pl-5 pb-5 mt-5">
+                    <div class="text-center">
+                        <h1 class="form-header mb-3">Create an Account</h1>
+                        <p style="margin-bottom: 20px;" class="mt-4 header-paragraph">Already have an account? <span><a
+                                    class="header-link" href="{% url 'login' %}"
+                                    style="color:  #F39DB6; font-weight: bold; text-decoration: none; ">Sign
+                                    In</a></span></p>
+                        <a href="#"><i id="icon" style=" color: #f6d2d6; " class="fa fa-facebook-f links "></i></a>
+                        <a href="#"><i id="icon" style=" color: #f6d2d6; " class="fa fa-twitter links"></i></a>
+                        <a href="#"><i id="icon" style=" color: #f6d2d6; " class="fa fa-linkedin links"></i></a>
+                        <a href="#"><i id="icon" style=" color: #f6d2d6; " class="fa fa-instagram links"></i></a><br>
+                    </div>
+                    <div class="mt-5" style=" background-color: #e9b7c5; color: #D46A92; font-family: 'Lora','sans-serif'; width: 63%; border-radius: 10px;">
+                        {{form.errors}}
+                    </div> 
+                    <div class="row" style="margin-bottom: 20px;">
+                        <div class="col-md-6 col-12">
+                            <div class="input-group input-group-lg info" style="width: 90%;">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i style="color: white;;"
+                                            class="fa fa-user"></i></span>
+                                </div>
+                                {{form.first_name}}
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-12">
+                            <div class="input-group input-group-lg info" style="width: 90%;">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i style="color: white;"
+                                            class="fa fa-user"></i></span>
+                                </div>
+                                {{form.last_name}}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" style="margin-bottom: 20px;">
+                        <div class="col-md-6 col-12">
+                            <div class="input-group input-group-lg info" style="width: 90%;">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i style="color: white;"
+                                            class="fa fa-id-card"></i></span>
+                                </div>
+                                {{form.username}}
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-12">
+                            <div class="input-group input-group-lg info " style="width: 90%;">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i style="color: white;"
+                                            class="fa fa-envelope"></i></span>
+                                </div>
+                                {{form.email}}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" style="margin-bottom: 20px;">
+                        <div class="col-md-6 col-12">
+                            <div class="input-group input-group-lg info" style="width: 90%;">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i style="color: white;"
+                                            class="fa fa-key"></i></span>
+                                </div>
+                                {{form.password1}}
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-12">
+                            <div class="input-group input-group-lg info" style="width: 90%;">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i style="color: white;"
+                                            class="fa fa-key"></i></span>
+                                </div>
+                                {{form.password2}}
+                            </div>
+                        </div>
+                          
+                    </div>
+                    <div class="form-btn mb-5">
+                        <input type="submit" value="Register" class="btn1" style="margin-left: 15%;">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script>
+        var form_fields = document.getElementsByTagName('input');
+            form_fields[1].placeholder = "Enter your first name"
+            form_fields[1].className = "form-control required"
+            form_fields[2].placeholder = "Enter your last name"
+            form_fields[2].className = "form-control required"
+            form_fields[3].placeholder = "Enter your Medical ID"
+            form_fields[3].className = "form-control required"
+            form_fields[3].pattern = "^[0-9]{7}$"
+            form_fields[4].placeholder = "Enter your email"
+            form_fields[4].className = "form-control required"
+            form_fields[5].placeholder = "Enter your password"
+            form_fields[5].className = "form-control required"
+            form_fields[6].placeholder = "Confirm password"
+            form_fields[6].className = "form-control required"
+    </script>
+    <script src="../js/homepage.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.6.0/umd/popper.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

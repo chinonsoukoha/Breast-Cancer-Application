@@ -1,0 +1,103 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="{% static 'cancer_app/css/home.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="{% static 'cancer_app/images/cancer_pic.png' %}" style="width: fit-content;">
+    <style>
+        .btn1:hover{
+    border: 1px solid #D46A92;
+    color: #D46A92 !important;
+    background: #FEFAFA;
+    }
+    .nav-link{
+    color: #D46A92 !important;
+    }
+    .nav-link:hover{
+        color: #D46A92 !important;
+        font-weight: bold;
+    }
+    .move{
+        margin-left: 15%;
+    }
+    @media only screen and (max-device-width: 480px) {
+
+        .move{
+        margin-left: 0;
+    }
+    }
+    @media only screen and (max-device-width: 540px) {
+
+        .move{
+        margin-left: 0;
+    }
+    }
+    </style>
+</head>
+
+<body>
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+            <a class="navbar-brand" href="{% url 'landingpage' %}">
+                <img id="logo" src="{% static 'cancer_app/images/Logo.svg' %}" width="60%">
+            </a>
+            <button style="padding-right: 3vh; outline: none; border: none;" class="navbar-toggler custom-toggler" type="button"
+                data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <i Style="color:#D46A92;" class="fa fa-bars"></i>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li>
+                        <h5 style="color: #D46A92; font-weight: bold; font-family: 'Playfair Display', serif;" class="mr-5 mt-2"> Hello, {{request.user}} </h5>
+                    </li>
+                    <li>
+                        <a class="nav-link mr-3" href="{% url 'about' %}">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{% url 'logout' %}"><button id="nav-btn" class="btn" type="submit">Logout</button></a>
+                    </li>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="text-center">
+            <h1 class="header-text mt-4">What Would You Like To Do?</h1>
+        </div>
+        <div class="row">
+            <div class="col-md-5 col-12">
+                <div class="card mt-5" style="width: 100%;">
+                    <img src="{% static 'cancer_app/images/diagnose.jpg' %}" class="card-img-top" alt="...">
+                    <div class="card-body p-5">
+                        <h4 class="card-title">Diagnose Biopsy Images</h4>
+                        <p class="card-text">Use AI Powered Technology to Diagnose Breast Cancer.</p>
+                        <a href="{% url 'diagnosis' %}"><button class=" btn1">Diagnose</button></a>
+                    </div>
+                </div>
+            </div>
+            <div class="move col-md-5 col-12">
+                <div class="card mt-5" style="width: 100%;">
+                    <img src="{% static 'cancer_app/images/assessment.jpg' %}" class="card-img-top" alt="...">
+                    <div class="card-body p-5">
+                        <h4 class="card-title">Take Risk Assessment Test</h4>
+                        <p class="card-text">Use AI Powered Technology to Predict Breast Cancer Risk Level.</p>
+                        <a href="{% url 'risk' %}"><button class=" btn1">Predict</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.6.0/umd/popper.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&display=swap');
+.navbar{
+    background-color: #FEFAFA !important;
+    padding: 0;
+}
+#nav-btn{
+    border: 1px solid #D46A92;
+    color: #D46A92;
+}
+#nav-btn:hover{
+    background-color: #D46A92;
+    color: #fff;
+    font-weight: bold;
+    transition: all 0.2s ease-out;
+}
+.navbar-nav{
+    font-family: 'Lora', serif;
+}
+.nav-link{
+    color: #D46A92 !important;
+}
+.nav-link:hover{
+    color: #D46A92 !important;
+    font-weight: bold;
+}
+.header-text{
+    font-family: 'Playfair Display', serif;
+    font-weight: bolder;
+    color: #D46A92;
+}

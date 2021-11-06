@@ -1,0 +1,84 @@
+{% load static %} <!--Load static files-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'cancer_app/css/login.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="{% static 'cancer_app/images/cancer_pic.png' %}" style="width: fit-content;">
+</head>
+
+<body>
+    <!--Image Display-->
+    <div class="row">
+        <div class="col-xl-5 img-display text-left d-xl-block d-none">
+            <!--Bootstrap to make the image collapse when in smaller devices-->
+            <img src="{% static 'cancer_app/images/login.jpg' %}" class="img-fluid">
+        </div>
+        <!--Login form-->
+        <div class="col-xl-7">
+            <nav class="navbar navbar-expand-lg">
+                    <a class="navbar-brand ml-auto" href="{% url 'landingpage' %}"><img src="{% static 'cancer_app/images/Logo.svg' %}" width="60%"></a>
+                    <!-- <button style="padding-right: 3vh; outline: none; border: none;" class="navbar-toggler custom-toggler" type="button"
+                            data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <i Style="color:#D46A92;" class="fa fa-bars"></i>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav ml-auto">
+                                <li class="nav-item">
+                                    <a href="signup.html"><button id="nav-btn" class="btn" type="submit">Logout</button></a>
+                                </li>
+                            </ul>
+                        </div> -->
+            </nav>
+            <form method="POST" action="">
+                <div class="container pl-5 pt-5 pb-5 mt-5">
+                    {% csrf_token %}
+                    <h1 class="form-header mb-3">Sign In</h1>
+                    <p style= "margin-bottom: 30px;" class="mt-4 header-paragraph">Don't have an Account? <span><a class = "header-link" href="{% url 'signup' %}"
+                                style="color:  #F39DB6; font-weight: bold; text-decoration: none; ">Sign Up</a></span></p>
+                    {% for message in messages %}
+                        <div style=" background-color: #e9b7c5; color: #D46A92; font-family: 'Lora','sans-serif'; width: 63%; padding: 5px; border-radius: 10px;">{{message}}</div>
+                    {% endfor %}
+                    <!-- <div class="input-group input-group-lg info" style=" margin-bottom: 40px;">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i style="color: white;" class="fa fa-envelope"></i></span>
+                        </div>
+                        <input required type="email" name= "email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                            title="Email must contain @ and . " class="form-control" placeholder="Enter your email"
+                            aria-describedby="basic-addon1">
+                    </div> -->
+                    <div class="input-group input-group-lg info" style=" margin-bottom: 40px;">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i style="color: white;" class="fa fa-id-card"></i></span>
+                        </div>
+                        <input required type="text" name= "username" pattern="[0-9]{7}" title="Please Medical ID must comprise of 7 digits"
+                     class="form-control" placeholder="Enter your Medical ID" aria-describedby="basic-addon1">
+                    </div>
+                    <div class="input-group input-group-lg info">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i style="color: white;" class="fa fa-eye"></i></span>
+                        </div>
+                        <input required pattern="(?=.*\d)(?=.*[A-Z]).{8,}$" name= "password" 
+                            title="Password must be 8 characters long consisting of at least a small letter, capital letter and number"
+                            type="password" class="form-control password" placeholder="Enter your password"
+                            aria-describedby="basic-addon1">
+                    </div>
+                    <div class="form-btn mb-5">
+                        <input type="submit" value="Login" class="btn1">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.6.0/umd/popper.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

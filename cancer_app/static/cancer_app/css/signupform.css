@@ -1,0 +1,99 @@
+.header h1{
+    margin-top: 40px;
+}
+form{
+    border: 1px solid rgb(79, 79, 148);
+    padding: 30px;
+    background-color: white;
+    margin-bottom: 30px;
+    box-shadow: 1px 1px 1px 2px rgb(187, 181, 255);
+    border-radius: 10px;
+}
+.upload-box{
+    font-size: 16px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px 2px grey;
+    width: 230px;
+    outline: none;
+}
+::-webkit-file-upload-button{
+    color: white;
+    background: rgb(79, 79, 148);
+    padding: 7px;
+    border: none;
+    border-top-left-radius: 10px;
+    outline: none;
+}
+::-webkit-file-upload-button:hover{
+    background: white;
+    border: 2px solid rgb(79, 79, 148);
+    color: rgb(79, 79, 148);
+}
+.form-control{
+    box-shadow: 1px 1px 1px 2px grey;
+}
+
+/* The slider itself */
+.slider {
+  -webkit-appearance: none;  /* Override default CSS styles */
+  appearance: none;
+  width: 100%; /* Full-width */
+  height: 10px; /* Specified height */
+  background: #d3d3d3; /* Grey background */
+  outline: none; /* Remove outline */
+  opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+  -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+  transition: opacity .2s;
+  border-radius: 10px;
+}
+
+/* Mouse-over effects */
+.slider:hover {
+  opacity: 1; /* Fully shown on mouse-over */
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  width: 20px; /* Set a specific slider handle width */
+  height: 20px; /* Slider handle height */
+  background: rgb(79, 79, 148); /* Green background */
+  cursor: pointer; /* Cursor on hover */
+  border-radius: 50%;
+}
+
+.slider::-moz-range-thumb {
+  width: 20px; /* Set a specific slider handle width */
+  height: 20px; /* Slider handle height */
+  background: rgb(79, 79, 148); /* Green background */
+  cursor: pointer; /* Cursor on hover */
+}
+.btn1{
+        border: none;
+        outline: none;
+        height: 50px;
+        width: 100%;
+        background-color: rgb(79, 79, 148);;
+        color: white;
+        border-radius: 4px;
+        font-weight: bold;
+    }
+    .btn1:hover{
+        background-color: white;
+        color: rgb(79, 79, 148);;
+        border: 1px solid;
+        cursor: pointer;
+}
+.link a{
+    color: rgb(79, 79, 148);
+    font-weight: bold;
+}
+.link a:hover{
+    color: rgb(26, 2, 129);
+    text-decoration: none;
+}
+label{
+    font-weight: bold;
+}

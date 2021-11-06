@@ -1,0 +1,110 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instructions</title>
+    <link rel="stylesheet" href="{% static 'cancer_app/css/about.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="{% static 'cancer_app/images/cancer_pic.png' %}" style="width: fit-content;">
+    <style>
+        body{
+            overflow: hidden;
+        }
+    #test-btn{
+        margin-top: 40px;
+        font-family: 'lora', serif;
+        width: 50%;  
+        border-radius: 5px; 
+        filter: drop-shadow(0px 2px 2px rgba(212, 106, 146, 1.0));
+        outline: none;
+        padding: 10px;
+        border: 1px solid #D46A92;
+        color: #D46A92 !important;
+        background: #FEFAFA;
+    }
+    #test-btn:hover{
+        background: linear-gradient(180deg, #D46A92 0%, #F39DB6 100%);
+        color: #fff !important; 
+        border: none; 
+    }
+    .banner-paragraph{
+    font-family: 'Lora', serif;
+    color: #F39DB6;
+    padding-left: 10%;
+    padding-right: 10%;
+    }
+    </style>
+</head>
+
+<body>
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+            <a class="navbar-brand" href="{% url 'landingpage' %}">
+                <img id="logo" src="{% static 'cancer_app/images/Logo.svg' %}" width="60%">
+            </a>
+            <button style="padding-right: 3vh; outline: none; border: none;" class="navbar-toggler custom-toggler"
+                type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i Style="color:#D46A92;" class="fa fa-bars"></i>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li>
+                        <h5 style="color: #D46A92; font-weight: bold; font-family: 'Playfair Display', serif;"
+                            class="mr-5 mt-2">{{request.user}}</h5>
+                    </li>
+                    <li>
+                        <a class="nav-link mr-3" href="{% url 'home' %}">Home</a>
+                    </li>
+                    <li>
+                        <a class="nav-link mr-3" href="{% url 'diagnosis' %}">Diagnosis</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{% url 'logout' %}"><button id="nav-btn" class="btn" type="submit">Logout</button></a>
+                    </li>
+            </div>
+        </div>
+    </nav>
+    <section class="analyse">
+        <div class="container">
+            <div class="text-center">
+                <h1 class="header-text mt-5">How to Use the Breast Cancer Diagnosis Tool</h1>
+            </div>
+            <div class="row">
+                <div class="col-12 col-lg-6">
+                <h3 class="header-text mt-5 ml-5" style="color: #F39DB6;">With a Laptop or Desktop </h3>
+                    <div class="container mt-3">
+                        <p class="banner-paragraph container">Connect your laptop/desktop to your microscope using a Microscope USB and take a picture of the breast histopathological image. Here are some useful links to give more details:
+                        </p>
+                            <ul class="banner-paragraph">
+                                <li><a class="nav-link" href="https://www.youtube.com/watch?v=rE2NSj_WU5o">Stereo Microscope</a></li>
+                                <li><a class="nav-link" href="https://www.youtube.com/watch?v=0ddc8hwYL-I">Digital Microscope</a></li>
+                            </ul>
+                        <p class="banner-paragraph">Upload your picture to the Melignant App and view the result.</p>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <h3 class="header-text mt-5 ml-5" style="color: #F39DB6;">With your Smartphone</h3>
+                    <p class="banner-paragraph container">Use your phone to take a picture of the breast cancer histopathological image through your microscopic lens. Here are some useful links to give more details:</p>
+                        <ul class="banner-paragraph">
+                            <li><a class="nav-link" href="https://www.youtube.com/watch?v=lEi49ANy57c">Video 1</a></li>
+                            <li><a class="nav-link" href="https://www.youtube.com/watch?v=cfd9ViHBlR4">Video 2</a></li>
+                        </ul>
+                    <p class="banner-paragraph">Upload your picture to the Melignant App and view the result.</p>
+                </div>
+            </div>    
+        </div>
+    </section>
+    <script src="../js/homepage.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.6.0/umd/popper.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
